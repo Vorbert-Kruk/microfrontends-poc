@@ -1,1 +1,1 @@
-# microfrontends-poc
+# Microfrontends POC
