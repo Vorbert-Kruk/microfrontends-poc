@@ -1,5 +1,18 @@
+import BlueprintCard from "./BlueprintCard";
+
 const HomePage = () => {
-  return <></>;
+  return (
+    <div>
+      <BlueprintCard
+        title="Terraform"
+        description="Some description about terraform"
+        author="Michael"
+        version="20.32.12"
+        lastUpdate="20.04.2023"
+        premiumOnly={false}
+      />
+    </div>
+  );
 };
 
 export default HomePage;
