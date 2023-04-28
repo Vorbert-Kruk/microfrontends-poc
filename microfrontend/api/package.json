@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "json-server --watch db.json --port 5901"
+    "dev": "json-server --watch db.js --port 5901"
   },
   "dependencies": {
-    "json-server": "^0.17.3"
+    "chance": "^1.1.11",
+    "json-server": "^0.17.3",
+    "uuid": "^9.0.0"
   },
   "keywords": [],
   "author": "",

@@ -26,7 +26,7 @@ interface BlueprintCardProps extends Omit<Blueprint, "id"> {
 }
 
 const BlueprintCard = ({
-  title,
+  name,
   description,
   author,
   version,
@@ -47,10 +47,10 @@ const BlueprintCard = ({
           justifyContent="space-between"
           alignItems="center"
         >
-          <Heading size="md">{title}</Heading>
+          <Heading size="md">{name}</Heading>
           <BlueprintCardBadge premiumOnly={premiumOnly} />
         </Stack>
-        <BlueprintCardDescription pt="1" title={description}>
+        <BlueprintCardDescription pt="1" name={description}>
           {description}
         </BlueprintCardDescription>
       </CardHeader>
@@ -75,7 +75,7 @@ const BlueprintCard = ({
           leftIcon={<DownloadIcon />}
           onClick={handleDownloadClick}
           isDisabled={shouldDisableDownloadButton}
-          title={
+          name={
             shouldDisableDownloadButton
               ? "Only premium users can download this blueprint"
               : undefined

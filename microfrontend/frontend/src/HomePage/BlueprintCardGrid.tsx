@@ -12,7 +12,7 @@ const BlueprintGrid = ({ blueprints }: BlueprintGridProps) => {
       {blueprints.map((blueprint) => (
         <BlueprintCard
           key={blueprint.id}
-          title={blueprint.title}
+          name={blueprint.name}
           description={blueprint.description}
           author={blueprint.author}
           version={blueprint.version}

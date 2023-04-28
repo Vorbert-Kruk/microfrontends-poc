@@ -4,7 +4,7 @@ import BlueprintCardGrid from "./BlueprintCardGrid";
 const blueprints: Blueprint[] = [
   {
     id: "1",
-    title: "Terraform",
+    name: "Terraform",
     description: "Some description about terraform",
     author: "Michael",
     version: "20.321.1",
@@ -13,7 +13,7 @@ const blueprints: Blueprint[] = [
   },
   {
     id: "2",
-    title: "Drupal",
+    name: "Drupal",
     description: "Some description about drupal",
     author: "Richard",
     version: "5.31.13",
@@ -22,7 +22,7 @@ const blueprints: Blueprint[] = [
   },
   {
     id: "3",
-    title: "AWS",
+    name: "AWS",
     description: "Some description about AWS",
     author: "Raymund",
     version: "5.5.5",
@@ -31,7 +31,7 @@ const blueprints: Blueprint[] = [
   },
   {
     id: "4",
-    title: "Kubernetes",
+    name: "Kubernetes",
     description: "Some description about kubernetes",
     author: "Krzysztof",
     version: "15.32.7",
