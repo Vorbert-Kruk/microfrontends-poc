@@ -14,18 +14,13 @@ import styled from "styled-components";
 import BlueprintCardDescription from "./BlueprintCardDescription";
 import BlueprintCardBadge from "./BlueprintCardBadge";
 import { downloadBlueprintUrl } from "./consts";
+import type { Blueprint } from "./types";
 
 const CardWrapper = styled(Card)`
-  max-width: 300px;
+  /* max-width: 300px; */
 `;
 
-interface BlueprintCardProps {
-  title: string;
-  description: string;
-  author: string;
-  version: string;
-  lastUpdate: string;
-  premiumOnly: boolean;
+interface BlueprintCardProps extends Omit<Blueprint, "id"> {
   // TODO Norbert: Adjust it during future development
   userIsPremium?: boolean;
 }
