@@ -7,10 +7,12 @@ import {
   CardHeader,
   Divider,
   Heading,
+  Stack,
 } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import BlueprintCardDescription from "./BlueprintCardDescription";
+import BlueprintCardBadge from "./BlueprintCardBadge";
 import { downloadBlueprintUrl } from "./consts";
 
 const CardWrapper = styled(Card)`
@@ -43,7 +45,14 @@ const BlueprintCard = ({
   return (
     <CardWrapper>
       <CardHeader>
-        <Heading size="md">{title}</Heading>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Heading size="md">{title}</Heading>
+          <BlueprintCardBadge isPremium />
+        </Stack>
         <BlueprintCardDescription pt="1" noOfLines={1} title={description}>
           {description}
         </BlueprintCardDescription>
