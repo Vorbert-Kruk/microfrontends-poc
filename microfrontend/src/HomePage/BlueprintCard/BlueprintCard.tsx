@@ -11,6 +11,7 @@ import {
 import { DownloadIcon } from "@chakra-ui/icons";
 import styled from "styled-components";
 import BlueprintCardDescription from "./BlueprintCardDescription";
+import { downloadBlueprintUrl } from "./consts";
 
 const CardWrapper = styled(Card)`
   max-width: 300px;
@@ -35,6 +36,10 @@ const BlueprintCard = ({
   lastUpdate,
   premiumOnly,
 }: BlueprintCardProps) => {
+  const handleDownloadClick = () => {
+    window.open(downloadBlueprintUrl, "__blank");
+  };
+
   return (
     <CardWrapper>
       <CardHeader>
@@ -58,7 +63,12 @@ const BlueprintCard = ({
         <Divider />
       </Box>
       <CardFooter>
-        <Button size="sm" colorScheme="blue" leftIcon={<DownloadIcon />}>
+        <Button
+          size="sm"
+          colorScheme="blue"
+          leftIcon={<DownloadIcon />}
+          onClick={handleDownloadClick}
+        >
           Download blueprint
         </Button>
       </CardFooter>
