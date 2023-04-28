@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardBody,
@@ -38,11 +39,13 @@ const BlueprintCard = ({
     <CardWrapper>
       <CardHeader>
         <Heading size="md">{title}</Heading>
-        <BlueprintCardDescription pt="1">
+        <BlueprintCardDescription pt="1" noOfLines={1} title={description}>
           {description}
         </BlueprintCardDescription>
       </CardHeader>
-      <Divider />
+      <Box>
+        <Divider />
+      </Box>
       <CardBody>
         <BlueprintCardDescription>Author: {author}</BlueprintCardDescription>
         <BlueprintCardDescription>Version: {version}</BlueprintCardDescription>
@@ -51,7 +54,9 @@ const BlueprintCard = ({
         </BlueprintCardDescription>
         <BlueprintCardDescription>{premiumOnly}</BlueprintCardDescription>
       </CardBody>
-      <Divider />
+      <Box>
+        <Divider />
+      </Box>
       <CardFooter>
         <Button size="sm" colorScheme="blue" leftIcon={<DownloadIcon />}>
           Download blueprint
