@@ -41,11 +41,7 @@ const blueprints: Blueprint[] = [
 ];
 
 const HomePage = () => {
-  return (
-    <div>
-      <BlueprintCardGrid blueprints={blueprints} />
-    </div>
-  );
+  return <BlueprintCardGrid blueprints={blueprints} />;
 };
 
 export default HomePage;
