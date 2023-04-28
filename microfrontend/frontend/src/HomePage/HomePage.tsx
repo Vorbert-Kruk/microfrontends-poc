@@ -1,47 +1,45 @@
+import { useEffect, useState } from "react";
 import { Blueprint } from "./BlueprintCard/types";
 import BlueprintCardGrid from "./BlueprintCardGrid";
+import { Alert, AlertDescription, AlertIcon, Spinner } from "@chakra-ui/react";
 
-const blueprints: Blueprint[] = [
-  {
-    id: "1",
-    name: "Terraform",
-    description: "Some description about terraform",
-    author: "Michael",
-    version: "20.321.1",
-    lastUpdate: "20.04.2023",
-    premiumOnly: false,
-  },
-  {
-    id: "2",
-    name: "Drupal",
-    description: "Some description about drupal",
-    author: "Richard",
-    version: "5.31.13",
-    lastUpdate: "21.04.2023",
-    premiumOnly: true,
-  },
-  {
-    id: "3",
-    name: "AWS",
-    description: "Some description about AWS",
-    author: "Raymund",
-    version: "5.5.5",
-    lastUpdate: "13.03.2023",
-    premiumOnly: false,
-  },
-  {
-    id: "4",
-    name: "Kubernetes",
-    description: "Some description about kubernetes",
-    author: "Krzysztof",
-    version: "15.32.7",
-    lastUpdate: "20.04.2023",
-    premiumOnly: true,
-  },
-];
+enum FetchState {
+  "FETCHING",
+  "FETCHED",
+  "ERROR",
+}
 
 const HomePage = () => {
-  return <BlueprintCardGrid blueprints={blueprints} />;
+  const [dataState, setDataState] = useState<FetchState>(FetchState.FETCHING);
+  const [blueprints, setBlueprints] = useState<Blueprint[]>([]);
+
+  useEffect(() => {
+    window
+      .fetch("http://localhost:5901/blueprints")
+      .then((data) => data.json())
+      .then((fetchedBlueprints: Blueprint[]) => {
+        setDataState(FetchState.FETCHED);
+        setBlueprints(fetchedBlueprints);
+      })
+      .catch(() => {
+        setDataState(FetchState.ERROR);
+      });
+  }, []);
+
+  return (
+    <>
+      {dataState === FetchState.FETCHING && <Spinner />}
+      {dataState === FetchState.FETCHED && (
+        <BlueprintCardGrid blueprints={blueprints} />
+      )}
+      {dataState === FetchState.ERROR && (
+        <Alert status="error">
+          <AlertIcon />
+          <AlertDescription>Couldn't fetch blueprints.</AlertDescription>
+        </Alert>
+      )}
+    </>
+  );
 };
 
 export default HomePage;
