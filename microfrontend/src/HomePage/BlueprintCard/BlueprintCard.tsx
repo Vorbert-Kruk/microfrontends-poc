@@ -26,8 +26,8 @@ interface BlueprintCardProps {
   version: string;
   lastUpdate: string;
   premiumOnly: boolean;
-  // NOTE: To add during future development
-  // userIsPremium
+  // TODO Norbert: Adjust it during future development
+  userIsPremium?: boolean;
 }
 
 const BlueprintCard = ({
@@ -37,7 +37,9 @@ const BlueprintCard = ({
   version,
   lastUpdate,
   premiumOnly,
+  userIsPremium,
 }: BlueprintCardProps) => {
+  const shouldDisableDownloadButton = premiumOnly && !userIsPremium;
   const handleDownloadClick = () => {
     window.open(downloadBlueprintUrl, "__blank");
   };
@@ -51,9 +53,9 @@ const BlueprintCard = ({
           alignItems="center"
         >
           <Heading size="md">{title}</Heading>
-          <BlueprintCardBadge isPremium />
+          <BlueprintCardBadge premiumOnly={premiumOnly} />
         </Stack>
-        <BlueprintCardDescription pt="1" noOfLines={1} title={description}>
+        <BlueprintCardDescription pt="1" title={description}>
           {description}
         </BlueprintCardDescription>
       </CardHeader>
@@ -77,6 +79,12 @@ const BlueprintCard = ({
           colorScheme="blue"
           leftIcon={<DownloadIcon />}
           onClick={handleDownloadClick}
+          isDisabled={shouldDisableDownloadButton}
+          title={
+            shouldDisableDownloadButton
+              ? "Only premium users can download this blueprint"
+              : undefined
+          }
         >
           Download blueprint
         </Button>

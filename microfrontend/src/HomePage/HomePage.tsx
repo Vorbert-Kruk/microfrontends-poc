@@ -9,7 +9,8 @@ const HomePage = () => {
         author="Michael"
         version="20.32.12"
         lastUpdate="20.04.2023"
-        premiumOnly={false}
+        premiumOnly={true}
+        userIsPremium
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import { Badge } from "@chakra-ui/react";
 
 interface BlueprintCardBadgeProps {
-  isPremium?: boolean;
+  premiumOnly?: boolean;
 }
 
 const PremiumBadge = () => {
@@ -20,8 +20,8 @@ const FreeBadge = () => {
   );
 };
 
-const BlueprintCardBadge = ({ isPremium }: BlueprintCardBadgeProps) => {
-  return isPremium ? <PremiumBadge /> : <FreeBadge />;
+const BlueprintCardBadge = ({ premiumOnly }: BlueprintCardBadgeProps) => {
+  return premiumOnly ? <PremiumBadge /> : <FreeBadge />;
 };
 
 export default BlueprintCardBadge;
