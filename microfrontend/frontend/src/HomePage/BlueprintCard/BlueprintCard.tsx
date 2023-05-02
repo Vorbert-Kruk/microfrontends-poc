@@ -50,7 +50,7 @@ const BlueprintCard = ({
           <Heading size="md">{name}</Heading>
           <BlueprintCardBadge premiumOnly={premiumOnly} />
         </Stack>
-        <BlueprintCardDescription pt="1" name={description}>
+        <BlueprintCardDescription pt="1">
           {description}
         </BlueprintCardDescription>
       </CardHeader>
