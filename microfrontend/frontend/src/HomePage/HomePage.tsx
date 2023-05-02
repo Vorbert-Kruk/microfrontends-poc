@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Blueprint } from "./BlueprintCard/types";
 import BlueprintCardGrid from "./BlueprintCardGrid";
 import { Alert, AlertDescription, AlertIcon, Spinner } from "@chakra-ui/react";
+import api from "../api";
 
 enum FetchState {
   "FETCHING",
@@ -14,10 +15,9 @@ const HomePage = () => {
   const [blueprints, setBlueprints] = useState<Blueprint[]>([]);
 
   useEffect(() => {
-    window
-      .fetch("http://localhost:5901/blueprints")
-      .then((data) => data.json())
-      .then((fetchedBlueprints: Blueprint[]) => {
+    api
+      .fetchBlueprints()
+      .then((fetchedBlueprints) => {
         setDataState(FetchState.FETCHED);
         setBlueprints(fetchedBlueprints);
       })
