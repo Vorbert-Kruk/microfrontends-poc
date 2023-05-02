@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledWrapper = styled.nav`
-  padding: 12px 16px;
+  padding: 16px;
   background-color: #357ec7;
 `;
 
