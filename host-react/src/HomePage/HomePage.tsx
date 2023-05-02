@@ -1,5 +1,12 @@
+// TODO Norbert: Add loading state and error-catch mechanism
+import BlueprintsMicrofrontend from "blueprintsMicrofrontend/Microfrontend";
+
 const HomePage = () => {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      <BlueprintsMicrofrontend userIsPremium />
+    </div>
+  );
 };
 
 export default HomePage;
