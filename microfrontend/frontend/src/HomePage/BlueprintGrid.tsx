@@ -2,11 +2,12 @@ import { SimpleGrid } from "@chakra-ui/react";
 import BlueprintCard from "./BlueprintCard/BlueprintCard";
 import type { Blueprint } from "./types";
 
-interface BlueprintGridProps {
+export interface BlueprintGridProps {
   blueprints: Blueprint[];
+  userIsPremium: boolean;
 }
 
-const BlueprintGrid = ({ blueprints }: BlueprintGridProps) => {
+const BlueprintGrid = ({ blueprints, userIsPremium }: BlueprintGridProps) => {
   return (
     <SimpleGrid minChildWidth={270} spacing={5}>
       {blueprints.map((blueprint) => (
@@ -18,7 +19,7 @@ const BlueprintGrid = ({ blueprints }: BlueprintGridProps) => {
           version={blueprint.version}
           lastUpdate={blueprint.lastUpdate}
           premiumOnly={blueprint.premiumOnly}
-          userIsPremium={false}
+          userIsPremium={userIsPremium}
         />
       ))}
     </SimpleGrid>

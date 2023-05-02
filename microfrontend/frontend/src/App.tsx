@@ -6,7 +6,7 @@ function App() {
   return (
     <ThemeProvider>
       <PagesWrapper>
-        <HomePage />
+        <HomePage userIsPremium />
       </PagesWrapper>
     </ThemeProvider>
   );
