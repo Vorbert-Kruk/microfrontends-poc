@@ -1,4 +1,4 @@
-import type { Blueprint } from "./HomePage/BlueprintCard/types";
+import type { Blueprint } from "./HomePage/types";
 
 // NOTE: This variable may easily become configurable
 const apiUrl = "http://localhost:5901";

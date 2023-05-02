@@ -1,6 +1,6 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import BlueprintCard from "./BlueprintCard/BlueprintCard";
-import type { Blueprint } from "./BlueprintCard/types";
+import type { Blueprint } from "./types";
 
 interface BlueprintGridProps {
   blueprints: Blueprint[];

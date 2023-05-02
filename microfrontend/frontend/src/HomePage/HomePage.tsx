@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Blueprint } from "./BlueprintCard/types";
+import type { Blueprint } from "./types";
 import BlueprintCardGrid from "./BlueprintCardGrid";
 import { Alert, AlertDescription, AlertIcon, Spinner } from "@chakra-ui/react";
 import api from "../api";

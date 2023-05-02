@@ -14,7 +14,7 @@ import styled from "styled-components";
 import BlueprintCardDescription from "./BlueprintCardDescription";
 import BlueprintCardBadge from "./BlueprintCardBadge";
 import { downloadBlueprintUrl } from "./consts";
-import type { Blueprint } from "./types";
+import type { Blueprint } from "../types";
 
 const CardWrapper = styled(Card)`
   /* max-width: 300px; */
