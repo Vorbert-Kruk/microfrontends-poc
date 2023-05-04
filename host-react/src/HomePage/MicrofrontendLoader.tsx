@@ -1,5 +1,5 @@
 const MicrofrontendLoader = () => {
-  return <div>Loading ...</div>;
+  return <div>Fetching microfrontend ...</div>;
 };
 
 export default MicrofrontendLoader;
