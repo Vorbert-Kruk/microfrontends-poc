@@ -1,5 +1,6 @@
 import HomePage from "../HomePage";
 import type { HomePageProps } from "../HomePage";
+import { ThemeProvider } from "../theme";
 
 export type MicrofrontendProps = HomePageProps;
 
@@ -20,7 +21,11 @@ const Microfrontend = ({ userIsPremium }: MicrofrontendProps) => {
     );
   }
 
-  return <HomePage userIsPremium={userIsPremium} />;
+  return (
+    <ThemeProvider>
+      <HomePage userIsPremium={userIsPremium} />
+    </ThemeProvider>
+  );
 };
 
 export default Microfrontend;

@@ -6,9 +6,6 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-// eslint-disable-next-line
-console.log(theme);
-
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
 };

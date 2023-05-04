@@ -17,7 +17,16 @@ export default defineConfig({
         "./renderMicrofrontend":
           "./src/exposedFunctionalities/renderMicrofrontend",
       },
-      shared: ["react", "react-dom", "styled-components", "@chakra-ui/react"],
+      shared: [
+        "react",
+        "react-dom",
+        "styled-components",
+        "@chakra-ui/react",
+        "@chakra-ui/icons",
+        "@emotion/styled",
+        "@emotion/react",
+        "framer-motion",
+      ],
     }),
   ],
 });

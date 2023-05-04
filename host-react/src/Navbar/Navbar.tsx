@@ -8,6 +8,9 @@ const StyledWrapper = styled.nav`
 const NavbarHeader = styled.h2`
   font-size: 24px;
   line-height: 1;
+  margin: 0;
+  font-weight: bold;
+  color: white;
 `;
 
 const Navbar = () => {

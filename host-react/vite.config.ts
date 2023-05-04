@@ -9,7 +9,7 @@ export default defineConfig({
     federation({
       name: "host_react",
       remotes: {
-        blueprintsMicrofrontend: "http://localhost:4173/assets/remoteEntry.js",
+        blueprintsMicrofrontend: "http://localhost:5900/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "styled-components"],
     }),
